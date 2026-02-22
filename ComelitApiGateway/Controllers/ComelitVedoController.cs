@@ -17,7 +17,7 @@ namespace ComelitApiGateway.Controllers
     /// <param name="config"></param>
     /// <param name="vedo"></param>
     [ApiController]
-    [Route("Vedo")]
+    [Route("vedo")]
     public class ComelitVedoController(IConfiguration config, IComelitVedo vedo) : BaseController(config)
     {
         protected readonly IComelitVedo _vedo = vedo;

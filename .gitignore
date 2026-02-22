@@ -369,3 +369,5 @@ bin
 /Frontend/cx-relationship-frontend/.angular/cache/15.1.4
 /ComelitApiGateway/appsettings.Release.json
 /ComelitApiGateway/.config
+/.env
+/ComelitApiGateway/appsettings.Development.json

@@ -18,11 +18,15 @@ if (String.IsNullOrEmpty(builder.Configuration["VEDO_URL"]))
     throw new GeneralException("VEDO_URL is not set");
 }
 
-//Choose whats did you prefer
+// Configure TimeZone from appsettings
+var timeZone = builder.Configuration["TimeZone"];
+if (!string.IsNullOrEmpty(timeZone))
+{
+    Environment.SetEnvironmentVariable("TZ", timeZone);
+}
+
 #if DEBUG
     builder.WebHost.ConfigureKestrel(options => options.ListenLocalhost(5000));
-#else
-builder.WebHost.ConfigureKestrel(options => options.ListenAnyIP(5000));
 #endif
 
 // Add services to the container.

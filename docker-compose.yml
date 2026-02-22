@@ -1,0 +1,14 @@
+services:
+  comelit-api-gateway:
+    image: giogdev/comelit-api-gateway:v1.0.0
+    container_name: comelit-api-gateway
+    ports:
+      - "${PORT:-8080}:${CONTAINER_PORT:-5000}"
+    environment:
+      - ASPNETCORE_URLS=http://+:${CONTAINER_PORT:-5000}
+      - VEDO_KEY=${VEDO_KEY}
+      - VEDO_URL=${VEDO_URL}
+      - VEDO_EXCLUDED_AREAS_ID=${VEDO_EXCLUDED_AREAS_ID}
+      - ENABLE_SWAGGER=${ENABLE_SWAGGER}
+      - TZ=Europe/Rome
+    restart: unless-stopped
