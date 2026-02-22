@@ -2,7 +2,7 @@
 ![Comelit](https://pro.comelitgroup.com/images/logo.svg)
 
 # Comelit Api Gateway
-.NET X api gateway is a project aimed at integrating **Comelit Vedo** alarm system to **Home Assistant** (or what you want 🙂) with ease.
+.NET 10 api gateway is a project aimed at integrating **Comelit Vedo** alarm system to **Home Assistant** (or what you want 🙂) with ease.
 
 ### Features
 * Get global alarm status
@@ -22,11 +22,11 @@
 
 1. Pull docker image whith this command (available on [Docker Hub](https://raw.githubusercontent.com/Asganafer/comelit-api-gateway/e85dcaa167111795297a7ff18cc93ef3db384656/docs/images/comelit-logo.svg)):
 ~~~
-docker pull asgdeveloper/comelit-api-gateway:latest
+docker pull giogdev/comelit-api-gateway:latest
 ~~~
 2. Run container with this command:
 ~~~
-docker run -d comelit-api-gateway:latest
+docker run -d giogdev/comelit-api-gateway:latest
     -p 5000:5000
     -e ASPNETCORE_URLS=http://0.0.0.0:5000
     -e VEDO_KEY=<key>
@@ -38,7 +38,7 @@ or use docker-compose:
 ~~~
 services:
   comelit-api-gateway:
-    image: comelitapigateway:latest
+    image: giogdev/comelit-api-gateway:latest
     ports:
       - "5000:5000"         
     environment:
@@ -57,7 +57,7 @@ If you insert a wrong code your alarm will start ringing! \
 _Example: 123456_
 ##### VEDO_URL [<span style="color:red">required</span>]
 Local IP address of your vedo alarm system. \
-_Example: http://192.1168.1.10_
+_Example: http://192.168.1.10_
 ##### VEDO_EXCLUDED_AREAS_ID
 List of area's IDs that are not configured in your system or you won't include in this gateway. \ 
 By default there are 8 areas in comelit configuration but not all areas need to be configured.\
