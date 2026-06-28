@@ -1,11 +1,11 @@
-name: Depoly pipeline
+name: Deploy pipeline
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "test" ]
     tags: [ "v*.*.*" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "test" ]
 
 env:
   REGISTRY: docker.io
