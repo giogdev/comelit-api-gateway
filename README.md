@@ -66,8 +66,7 @@ Local IP address of your vedo alarm system. \
 _Example: http://192.168.1.10_
 ##### VEDO_EXCLUDED_AREAS_ID
 List of area's IDs that are not configured in your system or you won't include in this gateway. \ 
-By default there are 8 areas in comelit configuration but not all areas need to be configured.\
-Separate them with comma.\
+By default there are 8 areas in comelit configuration but not all areas need to be configured. Separate them with comma.\
 _Example: 5,6,7_
 ##### VEDO_API_VERSION_OVERRIDE
 Forces the API dialect used to arm/disarm the alarm. Leave empty to auto-detect the firmware. \
@@ -90,6 +89,11 @@ Default = 60 \
 _Example: 120_
 
 ## Home assistant integration
+### Use cases
+* Manage the alarm from Home Assistant
+* Get a (Telegram) notification when radar or state changes (HA detects when a value changes, so you can use it as a hook and send a notification)
+
+### Integration
 ![Home assistant integration](https://raw.githubusercontent.com/Asganafer/comelit-api-gateway/refs/heads/main/docs/images/home-assistant-schema.jpg)
 
 You can call the APIs of Comelit Api Gateway by adding them as alarm, switch and/or rest command. 
